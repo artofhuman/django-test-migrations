@@ -48,4 +48,6 @@ class Migrator(object):
 
     def reset(self) -> None:
         """Reset the state to the most recent one."""
+
+        call_command('flush', interactive=False)
         return call_command('migrate')
